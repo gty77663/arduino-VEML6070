@@ -1,0 +1,6 @@
+VEML6070    KEYWORD1
+init    KEYWORD2
+enable_sensor   KEYWORD2
+disable_sensor  KEYWORD2
+read_uvs_step   KEYWORD2
+convert_to_risk_level   KEYWORD2
