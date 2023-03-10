@@ -36,7 +36,7 @@ class VEML6070 {
         uint16_t read_uvs_step();
         RISK_LEVEL convert_to_risk_level(uint16_t uvs_step);
 
-        type enum {LOW, MODERATE, HIGH, VERY_HIGH, EXTREME} RISK_LEVEL;
+        typedef enum {LOW, MODERATE, HIGH, VERY_HIGH, EXTREME} RISK_LEVEL;
 }
 
 #endif
