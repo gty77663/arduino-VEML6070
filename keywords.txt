@@ -1,5 +1,5 @@
 VEML6070    KEYWORD1
-init    KEYWORD2
+begin    KEYWORD2
 enable_sensor   KEYWORD2
 disable_sensor  KEYWORD2
 read_uvs_step   KEYWORD2
