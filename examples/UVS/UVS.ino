@@ -1,18 +1,20 @@
 #include "VEML6070.h"
 
-VEML6070 veml;
-
 void setup() {
-    veml.begin();
-    Serial.prinln("Test sketch for VEML6070 UV sensor.");
+    VEML.begin();
+    Serial.println("Test sketch for VEML6070 UV sensor.");
 }
 
 void loop() {
-    uint16_t uvs = veml.read_uvs_step();
-    RISK_LEVEL risk_level = veml.convert_to_risk_level(uvs);
+    uint16_t uvs = VEML.read_uvs_step();
+    int risk_level = VEML.convert_to_risk_level(uvs);
+    char* risk = VEML.convert_to_risk_char(risk_level);
 
-    Serial.print("Current UVS is :")
+    Serial.print("Current UVS is: ");
     Serial.print(uvs);
-    Serial.print(", and is equal to ")
-    Serial.println(risk_level);
+    Serial.print(", with current risk level: ");
+    Serial.println(*risk);
+
+    // Integration time can be up to 1000ms in some pplications, so to be safe delay is set accrodingly
+    delay(1000);
 }
